@@ -25,5 +25,5 @@ RUN apk add -U python3 curl bash jq && \
 
 RUN printf "#!/bin/sh\n_ansible_playbook() { . /ansible-env/bin/activate && command ansible-playbook "'"$@"'" ; deactivate; }; _ansible_playbook "'"$@"'"" > /usr/bin/ansible-playbook && \
     chmod +x /usr/bin/ansible-playbook && \
-    printf "#!/bin/sh\n_az() { . /azure-env/bin/activate && command az "'"$@"'" ; deactivate; }; _az "'"$@"'"" >> /usr/bin/az && \
+    printf "#!/bin/sh\n_az() { . /azure-env/bin/activate && command az "'"$@"'" ; deactivate; }; _az "'"$@"'"" > /usr/bin/az && \
     chmod +x /usr/bin/az
